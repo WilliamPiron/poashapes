@@ -3,8 +3,8 @@
  */
 
 public class Point2D {
-    private double x;
-    private double y;
+    double x;
+    double y;
 
     public Point2D() {
         this(0.0,0.0);
@@ -16,20 +16,20 @@ public class Point2D {
     }
 
     public double getX() {
-        return x;
+        return this.x;
     }
 
     public double getY() {
-        return y;
+        return this.y;
     }
 
     public boolean isOrigin(){
-        return (x==0 && y==0);
+        return (x==0.0 && y==0.0);
     }
 
     public void translate(double dx, double dy) {
-        x += dx;
-        y += dy;
+        this.x += dx;
+        this.y += dy;
     }
 
     public double distance(Point2D other){
