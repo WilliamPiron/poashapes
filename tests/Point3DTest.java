@@ -5,15 +5,15 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Created by wilpiron on 26/09/2016.
+ * Created by William on 02/10/2016.
  */
-public class Point2DTest {
+public class Point3DTest {
 
-    Point2D p;
+    Point3D p;
 
     @BeforeMethod
     public void setUp() throws Exception {
-        p = new Point2D(0.0,0.0);
+        p = new Point3D(0.0,0.0,0.0);
     }
 
     @AfterMethod
@@ -23,20 +23,21 @@ public class Point2DTest {
 
     @Test
     public void testIsOrigin() throws Exception {
-        assertEquals(p.isOrigin(),true);
+        assertEquals(p.isOrigin(), true);
     }
 
     @Test
     public void testTranslate() throws Exception {
-        p.translate(2.0,3.0);
+        p.translate(2.0,3.0,4.0);
         assertEquals(p.getX(),2.0);
         assertEquals(p.getY(),3.0);
+        assertEquals(p.getZ(),4.0);
     }
 
     @Test
     public void testDistance() throws Exception {
-        Point2D other = new Point2D(2.0,2.0);
-        assertEquals(p.distance(other),Math.sqrt(8.0));
+        Point3D other = new Point3D(5.0,5.0,5.0);
+        assertEquals(p.distance(other),Math.sqrt(75.0));
     }
 
 }
